@@ -5,9 +5,12 @@ namespace App\Http\Controllers\Auth;
 use App\Http\Controllers\Controller;
 use App\Providers\RouteServiceProvider;
 use App\Models\User;
+use App\Models\Account;
 use Illuminate\Foundation\Auth\RegistersUsers;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Validator;
+use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\Log;
 use AmrShawky\LaravelCurrency\Facade\Currency;
 
 
@@ -74,12 +77,35 @@ class RegisterController extends Controller
      */
     protected function create(array $data)
     {
-        //dd($data);
-        return User::create([
-            'lastname' => $data['lastname'],
-            'firstname' => $data['firstname'],
-            'email' => $data['email'],
-            'password' => Hash::make($data['password']),
-        ]);
-    }
+       //dd($data);
+        DB::beginTransaction();
+        try {
+            $user = User::create([
+                'lastname' => $data['lastname'],
+                'firstname' => $data['firstname'],
+                'email' => $data['email'],
+                'password' => Hash::make($data['password']),
+            ]);
+
+            /* Charge the user's account with 500000 XOF
+               Check if the user has chosen another currency
+               If it is the case, proceed to the conversion of the XOF towards this currency
+            */
+            Log::info($data['currency']);
+          $change = ($data['currency'] == 'XOF') ? 500000 : Currency::convert()->from('XOF')->to($data['currency'])->amount(500000)->get();
+
+            Account::create([
+                'user_id' => $user->id,
+                'amount'  =>  $change,
+                'currency'=> $data['currency']
+            ]);
+
+            DB::commit();
+
+            return $user;
+        } catch (\Exception $e) {
+            Log::error($e);
+            DB::rollBack();
+        }
+}
 }
