@@ -54,6 +54,19 @@
                         </div>
 
                         <div class="row mb-3">
+                            <label for="currency" class="col-md-4 col-form-label text-md-end">{{ __('Devise') }}</label>
+
+                            <div class="col-md-6">
+                            <select class="form-control" id="currency" name="currency" autocomplete="currency">
+                                    <option> -- Selectionner -- </option>
+                                    @foreach($currencies as $currency)
+                                    <option  value="{{$currency}}"  {{ $currency == "XOF" ? 'selected' : '' }}> {{$currency}} </option>
+                                    @endforeach
+                            </select>
+                            </div>
+                        </div>
+
+                        <div class="row mb-3">
                             <label for="password" class="col-md-4 col-form-label text-md-end">{{ __('Mot de passe') }}</label>
 
                             <div class="col-md-6">
