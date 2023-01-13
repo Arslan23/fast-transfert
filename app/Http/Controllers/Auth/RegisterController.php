@@ -91,7 +91,6 @@ class RegisterController extends Controller
                Check if the user has chosen another currency
                If it is the case, proceed to the conversion of the XOF towards this currency
             */
-            Log::info($data['currency']);
           $change = ($data['currency'] == 'XOF') ? 500000 : Currency::convert()->from('XOF')->to($data['currency'])->amount(500000)->get();
 
             Account::create([
