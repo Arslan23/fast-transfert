@@ -13,7 +13,7 @@ return new class extends Migration
      */
     public function up()
     {
-       /* Schema::create('transactions', function (Blueprint $table) {
+       Schema::create('transactions', function (Blueprint $table) {
             $table->engine = 'InnoDB';
             $table->charset = 'utf8mb4';
             $table->collation = 'utf8mb4_unicode_ci';
@@ -27,9 +27,9 @@ return new class extends Migration
             ->references('id')
             ->on('users')
             ->onDelete('cascade');
-          $table->foreignId('currency_id')->nullable()->constrained();
+            $table->string('currency')->default('XOF');
             $table->timestamps();
-        });*/
+        });
     }
 
     /**
