@@ -33,7 +33,7 @@ Dans le menu, il y a le lien d'inscription.
 Au niveau de la page d'inscription, il est invité a renseigné son nom, son prénom, son mail, son mot de passe et à choisir sa devise (XOF par défaut).
 
 **Nous avons utlisé un [package](https://github.com/amrshawky/laravel-currency) qui 
-nous permet d'obtenir la liste de toutes les devises avec le taux de change.**
+nous permet d'obtenir la liste de toutes les devises à jour avec le taux de change.**
 
 
 Initialement, l'utilisateur inscrit bénéficie de 500000 X0F.
