@@ -2,7 +2,8 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\HomeController;
-use App\Http\Controllers\TypeaheadController;
+use App\Http\Controllers\WelcomeController;
+use App\Http\Controllers\TransactionController;
 
 
 /*
@@ -16,15 +17,12 @@ use App\Http\Controllers\TypeaheadController;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+Route::get('/', [WelcomeController::class, 'index'])->name('welcome');
 
 Auth::routes();
 
-Route::get('/home', [HomeController::class, 'index'])->name('home');
+Route::get('/transactions', [TransactionController::class, 'index'])->name('transactions');
 
-Route::resource('changes', 'HomeController');
 
-Route::get('/autocomplete', [TypeaheadController::class, 'autocompleteSearch'])->name('autocomplete');
+Route::resource('changes', 'WelcomeController');
 
