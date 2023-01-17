@@ -59,9 +59,7 @@ En cas d'erreur l'utilisateur est informé.
 A coté du bouton de validation de l'opération, on peut voir **l'historique de ses transactions** en accédant au lien
 
 ### Installation
-Want to contribute? Great!
-
-To fix a bug or enhance an existing module, follow these steps:
+Pour démarrer sur votre machine:
 
 - Cloner le repository
 - Faire `composer install`
@@ -70,9 +68,6 @@ To fix a bug or enhance an existing module, follow these steps:
 - `php artisan optimize`
 - `php artisan cache:clear`
 - `php artisan artisan serve`
-
-### Bug / Feature Request
-
 
 
 
