@@ -67,6 +67,9 @@ Pour démarrer sur votre machine:
 - `php artisan cache:clear`
 - `php artisan artisan serve`
 
+Les tables suivantes devraient être générées:
+
+![](https://github.com/Arslan23/fast-transfert/blob/main/public/images/FT%20Tables.pdf)
 
 
 ## Dévéloppé avec
