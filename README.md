@@ -31,26 +31,27 @@ qui l'invite à s'inscrire ou se connecter s'il n'a pas encore de compte.
 
 Dans le menu, il y a le lien d'inscription.
 
-Il est invité a renseigné son nom, son prénom, son mail, son mot de passe et à choisir sa devise (XOF par défaut).
-Nous avons utlisé un [package](https://github.com/amrshawky/laravel-currency) qui 
-nous permet d'obtenir la liste de toutes les devises avec le taux de change.
+Au niveau de la page d'inscription, il est invité a renseigné son nom, son prénom, son mail, son mot de passe et à choisir sa devise (XOF par défaut).
+
+**Nous avons utlisé un [package](https://github.com/amrshawky/laravel-currency) qui 
+nous permet d'obtenir la liste de toutes les devises avec le taux de change.**
 
 
 Initialement, l'utilisateur inscrit bénéficie de 500000 X0F.
-Une autre devise choisie à part le XOF, ce montant est converti avant d'être stocké dans le compte de <br>
+S'il choisit autre devise  à part le XOF, ce montant est converti avant d'être stocké dans le compte de <br>
 l'utilisateur avec sa devise.
 
 Une fois inscrit, il est redirigé vers la page d'acceuil, maintenant avec le formulaire pour effectuer  <br> 
 son opération
 
 Il sélectionne le receveur ou le destinataire
-Il entre le montant à envoyé (sa devise est immédiatement sélectionnée).
+Il entre le montant à envoyé (la devise de réception du receveur est immédiatement sélectionnée).
 
 Si la transaction est un succès, son compte et celui du receveur sont mis à jour.<br> 
 
 Il peut y arriver que  la devise de l'émetteur soit  différente de celui du receveur.<br> 
-Dans ce cas de figure, nous faisons la conversion dans la devise définie par le receveur avant <br> 
-de traiter et de valider l'opération
+Dans ce cas de figure, le système fait  la conversion dans la devise définie par le receveur avant <br> 
+de traiter et de valider l'opération.
 
 En cas d'erreur l'utilisateur est informé.
 
@@ -75,8 +76,8 @@ Pour démarrer sur votre machine:
 
 - [jQuery - Ajax](http://www.w3schools.com/jquery/jquery_ref_ajax.asp) - jQuery simplifies HTML document traversing, event handling, animating, and Ajax interactions for rapid web development.
 - [Laravel](https://laravel.com/docs/9.x) - Documentation
-- [Bootstrap](http://getbootstrap.com/) - Extensive list of components and  Bundled Javascript plugins.
-
+- [Bootstrap](http://getbootstrap.com/) - Extensive list of components and  Bundled Javascript plugins.  
+- [Vite] (https://vitejs.dev/)
 
 
 MIT © [AZA Expédit ](https://github.com/Arslan23)
