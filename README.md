@@ -37,19 +37,17 @@ nous permet d'obtenir la liste de toutes les devises à jour avec le taux de cha
 
 
 Initialement, l'utilisateur inscrit bénéficie de 500000 X0F.
-S'il choisit autre devise  à part le XOF, ce montant est converti avant d'être stocké dans le compte de <br>
-l'utilisateur avec sa devise.
+S'il choisit autre devise  à part le XOF, ce montant est converti avant d'être stocké dans le compte de l'utilisateur avec sa devise.
 
-Une fois inscrit, il est redirigé vers la page d'acceuil, maintenant avec le formulaire pour effectuer  <br> 
-son opération
+Une fois inscrit, il est redirigé vers la page d'acceuil, maintenant avec le formulaire pour effectuer son opération
 
-Il sélectionne le receveur ou le destinataire
+Il sélectionne le receveur ou le destinataire.
 Il entre le montant à envoyé (la devise de réception du receveur est immédiatement sélectionnée).
 
-Si la transaction est un succès, son compte et celui du receveur sont mis à jour.<br> 
+Si la transaction est un succès, son compte et celui du receveur sont mis à jour.
 
-Il peut y arriver que  la devise de l'émetteur soit  différente de celui du receveur.<br> 
-Dans ce cas de figure, le système fait  la conversion dans la devise définie par le receveur avant <br> 
+Il peut y arriver que  la devise de l'émetteur soit  différente de celui du receveur.
+Dans ce cas de figure, le système fait  la conversion dans la devise définie par le receveur avant
 de traiter et de valider l'opération.
 
 En cas d'erreur l'utilisateur est informé.
