@@ -69,8 +69,39 @@ Pour démarrer sur votre machine:
 
 Les tables suivantes devraient être générées:
 
-![](https://github.com/Arslan23/fast-transfert/blob/main/public/images/FT%20Tables.pdf)
+**Users**
 
+|  Propriétés | Type                  |      Taille        |  Description |
+|-------------|-----------------------|--------------------|--------------|
+|  id         |  bigint               |    20              |              |
+|  lastname   |  varchar              |    255             |              |
+|  firstname  |  varchar              |    255             |              |
+|  password   |  varchar              |    255             |              |
+|                                     |                    |              |
+|  role       |  enum (default CLIENT)|   enum(CLIENT, ADMIN)             |
+
+
+
+**Account**
+
+|  Propriétés | Type                  |      Taille        |  Description |
+|-------------|-----------------------|--------------------|--------------|
+|  id         |  bigint               |    20              |              |
+|  user_id    |  biginit              |    20                             |
+|  amount  |     decimal(8,2)         |    255             |              |
+|  currency   |  varchar (255)        |    255             |default  XOF  |
+|                                     |                    |              |
+
+
+**Transactions**
+
+|  Propriétés | Type                  |      Taille        |  Description |
+|-------------|-----------------------|--------------------|--------------|
+|  id         |  bigint               |    20              |              |
+|  sender_id  |  biginit              |    20              |              |
+|  receiver_id|  biginit              |    20              |              |
+|  currency   |  varchar (255)        |    255             |default  XOF  |
+|   amount    |  decimal(8,2)         |                    |              |
 
 ## Dévéloppé avec
 
