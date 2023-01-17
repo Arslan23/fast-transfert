@@ -25,7 +25,6 @@
 
 ### Présentation des scénarios (Cas de l'inscription et cas du transfert d'argent)
 
-#### Cas de l'inscription
 Une fois sur la page d'accueil, l'utilisateur qui n'est pas connecté à un message <br>
 qui l'invite à s'inscrire ou se connecter s'il n'a pas encore de compte.
 
