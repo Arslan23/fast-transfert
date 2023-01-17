@@ -1,8 +1,15 @@
-# Fast Transfert App (PAYDUNYA)
+### Fast Transfert App (PAYDUNYA)
 <table>
 <tr>
 <td>
-  A webapp using Quandl API to display history of stock growth in a given period of time. It helps predict the growth of stocks from the  charts of stock performace in any period of time. It helps to judge stocks, with the principle of momentum investing, which returns 1% per month on average.
+ Fast Transfert est une application web de transfert d'argent,  réalisée dans le cadre de recrutement de PayDunya.
+ Elle se présente comme Western Union pour transférer de l'argent tout en respectant les taux de change d'une devise à une autre.
+    
+ Fast Transfert possède:
+- Une page d'acceuil
+- Une page d'inscription
+- Une page de connexion
+- Une page de tableau de bord (historique des 10 dernières transactions)
 </td>
 </tr>
 </table>
@@ -18,21 +25,51 @@
 
 ### Présentation des scénarios (Cas de l'inscription et cas du transfert d'argent)
 
+#### Cas de l'inscription
+Une fois sur la page d'accueil, l'utilisateur qui n'est pas connecté à un message <br>
+qui l'invite à s'inscrire ou se connecter s'il n'a pas encore de compte.
+
+Dans le menu, il y a le lien d'inscription.
+
+Il est invité a renseigné son nom, son prénom, son mail, son mot de passe et à choisir sa devise (XOF par défaut).
+Nous avons utlisé un [package](https://github.com/amrshawky/laravel-currency) qui 
+nous permet d'obtenir la liste de toutes les devises avec le taux de change.
 
 
+Initialement, l'utilisateur inscrit bénéficie de 500000 X0F.
+Une autre devise choisie à part le XOF, ce montant est converti avant d'être stocké dans le compte de <br>
+l'utilisateur avec sa devise.
+
+Une fois inscrit, il est redirigé vers la page d'acceuil, maintenant avec le formulaire pour effectuer  <br> 
+son opération
+
+Il sélectionne le receveur ou le destinataire
+Il entre le montant à envoyé (sa devise est immédiatement sélectionnée).
+
+Si la transaction est un succès, son compte et celui du receveur sont mis à jour.<br> 
+
+Il peut y arriver que  la devise de l'émetteur soit  différente de celui du receveur.<br> 
+Dans ce cas de figure, nous faisons la conversion dans la devise définie par le receveur avant <br> 
+de traiter et de valider l'opération
+
+En cas d'erreur l'utilisateur est informé.
+
+
+
+A coté du bouton de validation de l'opération, on peut voir **l'historique de ses transactions** en accédant au lien
 
 ### Installation
 Want to contribute? Great!
 
 To fix a bug or enhance an existing module, follow these steps:
 
-- Fork the repo
-- Create a new branch (`git checkout -b improve-feature`)
-- Make the appropriate changes in the files
-- Add changes to reflect the changes made
-- Commit your changes (`git commit -am 'Improve feature'`)
-- Push to the branch (`git push origin improve-feature`)
-- Create a Pull Request 
+- Cloner le repository
+- Faire `composer install`
+- `npm install && npm run dev`
+- `php artisan migrate`
+- `php artisan optimize`
+- `php artisan cache:clear`
+- `php artisan artisan serve`
 
 ### Bug / Feature Request
 
