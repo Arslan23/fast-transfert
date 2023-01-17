@@ -23,10 +23,12 @@ return new class extends Migration
             ->references('id')
             ->on('users')
             ->onDelete('cascade');
+            $table->UnsignedBigInteger('receiver_id');
             $table->foreign('receiver_id')
             ->references('id')
             ->on('users')
             ->onDelete('cascade');
+            $table->decimal('amount', $precision = 8, $scale = 2);
             $table->string('currency')->default('XOF');
             $table->timestamps();
         });

@@ -5,7 +5,7 @@
     <div class="row justify-content-center">
         <div class="col-md-12">
             <div class="card">
-                <div class="card-header">{{ __('Tableau de Bord') }}</div>
+                <div class="card-header">{{ __('Envoyer de l\'argent') }}</div>
 
                 <div class="card-body">
                     @if (session('status'))
@@ -15,6 +15,11 @@
                     @endif
 
                     {{ __('Vous êtes connecté!') }}
+                    <div class="p-3">
+
+                  
+
+                    </div>
 
                     <form data-action="{{ route('changes.store') }}" method="POST" enctype="multipart/form-data" id="send-money-form">
                         @csrf
@@ -30,7 +35,7 @@
                                 <input type="text" class="form-control @error('currency') is-invalid @enderror" placeholder="Devise" id="currency" name="currency" aria-label="currency">
                             </div>
                             <div class="col-md-6 col-sm-4">
-                            <button type="submit" class="btn btn-primary">
+                            <button type="submit" class="btn btn-primary btn-submit">
                                     {{ __('Envoyer') }}
                                 </button>
                             </div>
