@@ -74,7 +74,7 @@ Pour démarrer sur votre machine:
 - [jQuery - Ajax](http://www.w3schools.com/jquery/jquery_ref_ajax.asp) - jQuery simplifies HTML document traversing, event handling, animating, and Ajax interactions for rapid web development.
 - [Laravel](https://laravel.com/docs/9.x) - Documentation
 - [Bootstrap](http://getbootstrap.com/) - Extensive list of components and  Bundled Javascript plugins.  
-- [Vite] (https://vitejs.dev/)
+- [Vite](https://vitejs.dev/)
 
 
 MIT © [AZA Expédit ](https://github.com/Arslan23)
