@@ -63,7 +63,7 @@ Pour démarrer sur votre machine:
 - Faire `composer install`
 - `npm install && npm run dev`
 
-Ouvrez un second terminal,
+   Ouvrez un second terminal,
 - `php artisan migrate`
 - `php artisan optimize`
 - `php artisan cache:clear`
