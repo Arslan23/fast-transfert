@@ -19,26 +19,26 @@ $(document).ready(function(){
             },
             success:function(response)
             {
-                console.log(response.code);
                 if(response.code === 200)
                 {
-                    $('#alert').removeClass('d-none').addClass('alert-success').show(function(){
+                    $('#alert').removeClass('d-none alert-danger alert-warning').addClass('alert-success').show(function(){
                         $(this).html("Transaction réussie");
-                    });
-                }
-                else
-                {
-                    $('#alert').removeClass('d-none').addClass('alert-warning').show(function(){
-                        $(this).html("Fonds insuffisants !");
                     });
                 }
                 $(form).trigger("reset");
             },
             error: function(response) {
-                if(response.code === 500)
+                console.log(response.status);
+                if(response.status === 500)
                 {
-                    $('#alert').removeClass('d-none').addClass('alert-danger').show(function(){
-                        $(this).html("Oops. Une erreur est survenue !");
+                    $('#alert').removeClass('d-none alert-success alert-warning').addClass('alert-danger').show(function(){
+                        $(this).html("Oops. Montant entré trop grand pour le système.");
+                    });
+                }
+                else if (response.status === 406)
+                {
+                    $('#alert').removeClass('d-none alert-danger alert-success').addClass('alert-warning').show(function(){
+                        $(this).html("Solde insuffisant pour cette opération.");
                     });
                 }
             },

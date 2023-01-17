@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="shortcut icon" href="./images/logo.png" type="image/png">
+    <link rel="shortcut icon" href=".{{ asset('images/logo2.png') }}" type="image/png">
 
     <title>Fast Transfert</title>
     <!-- google font -->
@@ -24,7 +24,7 @@
             <ul class="navigation">
             @auth
                 <li>
-                    <a href="{{ url('/home') }}">Acceuil</a>
+                    <a href="{{ url('/') }}">Acceuil</a>
                 </li>
                 <li>
                     <a href="{{ route('logout') }}" onclick="event.preventDefault(); document.getElementById('logout-form').submit();">{{ Auth::user()->firstname.' '.  Auth::user()->lastname  .'('.Auth::user()->role .')' }}</a>
@@ -52,6 +52,7 @@
             <div class="slider">
                 <div class="slides active">
                 @auth
+                <h3 style="color: white"> J'envoie de l'argent</h3>
                 <div style="color: white">
                 <form data-action="{{ route('changes.store') }}" method="POST" enctype="multipart/form-data" id="send-money-form">
                         @csrf
@@ -74,10 +75,10 @@
                         </div>
                         <div class="row pt-3">
                             <div class="col-md-6 col-sm-4">
-                                <input type="number" class="form-control" placeholder="Montant" id="amount" required name="amount" aria-label="Montant">
+                                <input type="number" class="form-control"  min="10" max="50000" placeholder="Montant" id="amount" required name="amount" aria-label="Montant">
                             </div>
                             <div class="col-md-6 col-sm-4">
-                                <input type="text" class="form-control" placeholder="Devise" id="currency" name="currency" aria-label="currency">
+                                <input type="text" class="form-control"  placeholder="Devise" id="currency" readonly name="currency" aria-label="currency">
                             </div>
                             </div>
                             <div class="row pt-3">

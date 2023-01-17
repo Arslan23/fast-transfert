@@ -52,6 +52,7 @@ class WelcomeController extends Controller
             $userId = Auth::id();
 
             $input = $request->all();
+            Log::info($input);
 
             $currentAccount = Account::where('user_id', $userId)->first();
 
@@ -60,9 +61,6 @@ class WelcomeController extends Controller
             $receiverAccount->amount += Currency::convert()->from($input['currency'])->to($receiverAccount->currency)->amount($input['amount'])->get();
 
             $receiverAccount->save();
-
-            Log::info($currentAccount);
-
 
 
             if($currentAccount->amount > $input['amount'])
@@ -86,8 +84,16 @@ class WelcomeController extends Controller
                     "code" => 200
                 ], 200);
             }
+            else{log::info("Yes");
+                return response()->json([
+                    "success" => false,
+                    "message" => "Transaction not saved",
+                    "code" => 406
+                ], 406);
+            }
         } catch (\Exception $e) {
             DB::rollBack();
+            Log::info($e);
             $response = ["message" => 'Error occured', 'success'=> false, 'errors'=> $e, 'code'=> 500];
             return response()->json($response, 500);
         }
